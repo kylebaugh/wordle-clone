@@ -1,0 +1,13 @@
+.guessRow {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.rowLetter {
+    width: 5vw;
+    height: 5vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+}
