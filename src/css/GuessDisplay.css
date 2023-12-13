@@ -1,11 +1,16 @@
 .guessRow {
     display:flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vw;
+    /* width: 20vw; */
+    /* background-color: burlywood; */
+    /* justify-content: space-evenly; */
 }
 
 .rowLetter {
-    width: 5vw;
-    height: 5vh;
+    width: 3vw;
+    height: 3vw;
     display:flex;
     align-items: center;
     justify-content: center;
