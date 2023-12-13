@@ -3,9 +3,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1vw;
-    /* width: 20vw; */
-    /* background-color: burlywood; */
-    /* justify-content: space-evenly; */
+
 }
 
 .rowLetter {
@@ -15,4 +13,12 @@
     align-items: center;
     justify-content: center;
     border: solid 1px black;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
 }

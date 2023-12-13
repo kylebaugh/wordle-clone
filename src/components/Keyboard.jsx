@@ -4,7 +4,7 @@ import '../css/Keyboard.css'
 
 const Keyboard = (props) => {
 
-    const {guess, setGuess, setGuesses, guesses, setFirst, setSecond, setThird, setFourth, setFifth} = props
+    const {guess, setGuess, setGuessCount, guessCount, setGuessArr, guessArr} = props
 
     return (
         <div>
@@ -36,7 +36,15 @@ const Keyboard = (props) => {
 
 
             <section id='bottomRow'>
-                <Key letter={'Go'} guesses={guesses} guess={guess} setGuess={setGuess} setGuesses={setGuesses} />
+                <Key
+                    letter={'Go'}
+                    guess={guess}
+                    setGuess={setGuess}
+                    guessCount={guessCount}
+                    setGuessCount={setGuessCount}
+                    setGuessArr={setGuessArr}
+                    guessArr={guessArr}
+                />
                 <Key letter={'Z'} guess={guess} setGuess={setGuess}/>
                 <Key letter={'X'} guess={guess} setGuess={setGuess}/>
                 <Key letter={'C'} guess={guess} setGuess={setGuess}/>

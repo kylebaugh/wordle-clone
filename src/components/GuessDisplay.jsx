@@ -3,24 +3,23 @@ import Guess from './Guess.jsx'
 import '../css/GuessDisplay.css'
 
 const GuessDisplay = (props) => {
-    const {word, guess, guesses} = props
+    const {word, guess, guessCount, guessArr} = props
 
     console.log(word)
 
     const guessMap = []
 
     for(let i = 0; i < 6; i++){
-        if(i === guesses){
-            guessMap.push(<Guess guess={guess} active={true}/>)
+        if(i === guessCount){
+            guessMap.push(<Guess guess={guess} active={true} data={guessArr[i]} word={word}/>)
         }else{
-            guessMap.push(<Guess guess={guess} active={false}/>)
+            guessMap.push(<Guess guess={guess} active={false} data={guessArr[i]} word={word}/>)
         }
     }
 
     return (
         <div>
             {guessMap}
-
         </div>
     )
 }

@@ -26,19 +26,16 @@ let wordArr = [
 
 function App() {
 
-  const [guesses, setGuesses] = useState(0)
+  const [guessCount, setGuessCount] = useState(0)
   const [word, setWord] = useState('')
   const [guess, setGuess] = useState([])
-  // const [first, setFirst] = useState('')
-  // const [second, setSecond] = useState('')
-  // const [third, setThird] = useState('')
-  // const [fourth, setFourth] = useState('')
-  // const [fifth, setFifth] = useState('')
+  const [guessArr, setGuessArr] = useState(['', '', '', '', '', ''])
+
 
   console.log('guess', guess)
 
   useEffect(() => {
-    setWord(lodash.sample(wordArr))
+    setWord(lodash.sample(wordArr).toUpperCase())
   }, [])
 
   return (
@@ -48,24 +45,17 @@ function App() {
       <GuessDisplay
         word={word}
         guess={guess}
-        guesses={guesses}
-        // first={first}
-        // second={second}
-        // third={third}
-        // fourth={fourth}
-        // fifth={fifth}
+        guessCount={guessCount}
+        guessArr={guessArr}
       />
 
       <Keyboard
         setGuess={setGuess}
         guess={guess}
-        setGuesses={setGuesses}
-        guesses={guesses}
-        // setFirst={setFirst}
-        // setSecond={setSecond}
-        // setThird={setThird}
-        // setFourth={setFourth}
-        // setFifth={setFifth}
+        setGuessCount={setGuessCount}
+        guessCount={guessCount}
+        setGuessArr={setGuessArr}
+        guessArr={guessArr}
       />
     </>
   )
