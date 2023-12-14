@@ -2,7 +2,17 @@ import {useState, useEffect} from 'react'
 
 const Guess = (props) => {
 
-    const {guess, active, data, word, guessCount, win, setWin} = props
+    const {guess, active, data, word, guessCount, setGuessCount, win, setWin, letterColors, setLetterColors} = props
+
+    const [asdf, setAsdf] = useState({})
+
+    // define word object
+    const wordObj = {}
+
+    // create key-value pairs for each letter in the guess
+    for(let i = 0; i < 5; i++){
+        wordObj[i] = word[i]
+      }
 
     const letterColor = {
         0: '',
@@ -14,15 +24,24 @@ const Guess = (props) => {
 
     if(word == data && word.length === 5 && win === false){
         setWin(true)
+        setGuessCount(6)
     }
 
+
+
     for(let i = 0; i < data.length; i++){
-        if(word.includes(data[i].toUpperCase()) && i !== word.indexOf(data[i].toUpperCase())){
-            letterColor[i] = 'yellow'
-        }else if(word.includes(data[i].toUpperCase()) && i === word.indexOf(data[i].toUpperCase())){
-            letterColor[i] = 'green'
+        if(word.includes(data[i].toUpperCase())){
+            if(wordObj[i] === data[i]){
+                letterColor[i] = 'green'
+            }else{
+                letterColor[i] = 'yellow'
+            }
         }
     }
+
+
+
+
 
 
 
