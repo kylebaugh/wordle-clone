@@ -30,9 +30,11 @@ function App() {
   const [word, setWord] = useState('')
   const [guess, setGuess] = useState([])
   const [guessArr, setGuessArr] = useState(['', '', '', '', '', ''])
+  const [win, setWin] = useState(false)
 
 
-  console.log('guess', guess)
+  // console.log('guess', guess)
+  console.log('word', word)
 
   useEffect(() => {
     setWord(lodash.sample(wordArr).toUpperCase())
@@ -47,6 +49,8 @@ function App() {
         guess={guess}
         guessCount={guessCount}
         guessArr={guessArr}
+        win={win}
+        setWin={setWin}
       />
 
       <Keyboard
